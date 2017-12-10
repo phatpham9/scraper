@@ -2,12 +2,9 @@ const Validation = require('micro-joi');
 
 const { Joi } = require('./helpers/custom-joi');
 
-const INVALID_SELECTORS = ['s-url', 's-scope', 's-selectors'];
-const MAX_SELECTORS = 10;
-
 const validate = Validation(Joi.object({
   query: Joi.object({
-    's-url': Joi
+    sUrl: Joi
       .string()
       .trim()
       .uri({
@@ -17,17 +14,14 @@ const validate = Validation(Joi.object({
         ],
       })
       .required(),
-    's-scope': Joi
+    sScope: Joi
       .string()
       .trim()
       .required(),
-    's-selectors': Joi
-      .customArray()
-      .items(Joi.string().trim().invalid(INVALID_SELECTORS))
-      .sparse(false)
-      .unique()
-      .max(MAX_SELECTORS),
-  }).unknown(true),
+  })
+  .unknown(true)
+  .rename('s-url', 'sUrl')
+  .rename('s-scope', 'sScope'),
 }));
 
 module.exports = {

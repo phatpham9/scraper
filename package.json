@@ -22,10 +22,12 @@
   },
   "dependencies": {
     "dotenv": "^4.0.0",
+    "http-status-codes": "^1.3.0",
     "joi": "^13.0.2",
     "micro": "latest",
     "micro-joi": "^3.1.0",
-    "microrouter": "^3.0.0"
+    "microrouter": "^3.0.0",
+    "x-ray": "^2.3.2"
   },
   "license": "MIT",
   "devDependencies": {
