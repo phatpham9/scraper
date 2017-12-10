@@ -27,7 +27,7 @@ const validate = Validation(Joi.object({
       .sparse(false)
       .unique()
       .max(MAX_SELECTORS),
-  }),
+  }).unknown(true),
 }));
 
 module.exports = {
