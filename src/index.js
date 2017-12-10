@@ -1,13 +1,12 @@
 require('dotenv').config();
-const { router } = require('microrouter');
 
-const { get } = require('./helpers.js');
-const { scrape } = require('./scraper.controller.js');
-const { validator } = require('./scraper.middleware.js');
+const { router, get } = require('./helpers/custom-microrouter');
+const { validate } = require('./middleware');
+const { scrape } = require('./controller');
 
-const notfound = (req, res) => res.send(404, 'Not found');
+const notFound = (req, res) => res.send(404, 'Not found');
 
 module.exports = router(
-  get('/scrape', validator(scrape)),
-  get('/*', notfound),
+  get('/scrape', validate(scrape)),
+  get('/*', notFound),
 );

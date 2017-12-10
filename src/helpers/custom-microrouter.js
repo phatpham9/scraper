@@ -1,5 +1,5 @@
 const { send } = require('micro');
-const { get, post, put, del } = require('microrouter');
+const { router, get, post, put, del } = require('microrouter');
 
 const wrap = cb => (path, fn) => {
   const newFn = (req, res) => {
@@ -12,6 +12,7 @@ const wrap = cb => (path, fn) => {
 };
 
 module.exports = {
+  router,
   get: wrap(get),
   post: wrap(post),
   put: wrap(put),
