@@ -2,7 +2,7 @@ const { INTERNAL_SERVER_ERROR, OK } = require('http-status-codes');
 const x = require('x-ray')();
 
 const scrape = async (req, res) => {
-  const { sUrl, sScope, ...selectors } = req.query;
+  const { sUrl, sScope, sLimit, ...selectors } = req.query;
 
   try {
     const data = await new Promise((resolve, reject) => {
@@ -15,7 +15,7 @@ const scrape = async (req, res) => {
       });
     });
 
-    res.send(OK, data);
+    res.send(OK, data.slice(0, sLimit));
   } catch (error) {
     res.send(INTERNAL_SERVER_ERROR, {
       code: INTERNAL_SERVER_ERROR,
