@@ -1,0 +1,34 @@
+language: node_js
+
+node_js:
+  - 9
+
+install:
+  - yarn
+
+cache:
+  yarn: true
+  directories:
+  - node_modules
+
+script:
+  - yarn lint
+
+# deploy:
+#   - provider: heroku
+#     api_key: $HEROKU_API_KEY
+#     skip_cleanup: true
+#     app: glab-staging-scraper
+#     on:
+#       branch: master
+#   - provider: heroku
+#     api_key: $HEROKU_API_KEY
+#     skip_cleanup: true
+#     app: glab-scraper
+#     on:
+#       tags: true
+
+notifications:
+  email: false
+  slack:
+    secure: "B826Y3eS2uMMtiUNCYEbmr0ue5UN6WJ8R5SLCkHo9FATwFOdLYwF8IWLYMRIrWny6qeB2RCQIyQIHQgm+7YqzF+A0nGxQOfTBf3vy76iOxP4iDOmixbULe3oMkdOVgxkopqtR4IOmoXLwcSRRCj6nhMGI4DFwEMsw5lgQDFDPrbe5cUkRk0PTxXZ+LX5pWPi/NX5PXW+dijZCGTPCW3+Q61+zyr7nwc8HqN/EcIww1nH4sH5F05XEMp+iwDo638SWhLXEbSfpI7qDFO6Rwk0A2tpmrhfloqqflxTg5OL2LiE0p9uKNsuTRhhNJLM/sTkL94IHIlGc+XFX42QUwZNOWioMC9qPatUEQUA2hPVNpZ7h+/4IJ64FB3fQDzRFh4RwUJnbBbmTkAwcjPdmHecUhDwq+PoryvFlq2gDbwys6V/p0HZfMTO/Ik2zz10mM3B4BOSEFxq4gqamu0kD7SlXE0flDyqVF4lilUfczz/EtC+GyuIdyvLrRK6hockvBP3uwsn5SXQi9WIaJp7xiiSid9bM5Ott3lPagsDp/uGwTfyDWM1nPoALduAawOrA1EHuKt7/QxhyVxznAGo8sgVs5xZtDtzieSydXjFMoUIx8RMzwEdfJ5bFOtOz83KGlfwWI1qdd0oa5Gf91uZdHjbRYH/0HIwHfLt7LfTDxJQsB4="
