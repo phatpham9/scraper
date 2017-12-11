@@ -26,6 +26,7 @@
     "joi": "^13.0.2",
     "micro": "latest",
     "micro-joi": "^3.1.0",
+    "micro-ratelimit": "^0.3.0",
     "microrouter": "^3.0.0",
     "x-ray": "^2.3.2"
   },

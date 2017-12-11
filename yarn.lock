@@ -1766,6 +1766,10 @@ micro-joi@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/micro-joi/-/micro-joi-3.1.0.tgz#c46e171026cf1fb53de6ab49a92d6364080fbea1"
 
+micro-ratelimit@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/micro-ratelimit/-/micro-ratelimit-0.3.0.tgz#2dc486c197d2f40ace6a25a9bd87f9fbcd692467"
+
 micro@9.0.2, micro@latest:
   version "9.0.2"
   resolved "https://registry.yarnpkg.com/micro/-/micro-9.0.2.tgz#fa51f12d09fa29bdf9767d6eac43414ae3fb6068"
