@@ -7,8 +7,8 @@ ADD package.json /app/package.json
 
 WORKDIR /app
 
-RUN ["yarn", "install", "--production"]
+RUN ["yarn", "--production"]
 
 ENV PORT 9000
 
-CMD ["yarn", "start"]
+CMD ["yarn", "serve"]

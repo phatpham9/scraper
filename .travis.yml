@@ -1,32 +1,27 @@
+sudo: required
+
 language: node_js
 
 node_js:
   - 9
 
+jobs:
+  include:
+    - stage: test
+      install:
+        - yarn
+      script:
+        - yarn test
+    - stage: build
+      services:
+        - docker
+      script:
+        - docker build -t gorillab/scraper .
+
 cache:
   yarn: true
   directories:
   - node_modules
-
-install:
-  - yarn
-
-script:
-  - yarn lint
-
-# deploy:
-#   - provider: heroku
-#     api_key: $HEROKU_API_KEY
-#     skip_cleanup: true
-#     app: glab-staging-scraper
-#     on:
-#       branch: master
-#   - provider: heroku
-#     api_key: $HEROKU_API_KEY
-#     skip_cleanup: true
-#     app: glab-scraper
-#     on:
-#       tags: true
 
 notifications:
   email: false
