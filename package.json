@@ -17,7 +17,7 @@
   },
   "scripts": {
     "test": "eslint . --ignore-path .gitignore",
-    "start": "micro-dev -p $PORT",
+    "start": "micro-dev -p 9000",
     "serve": "micro -p $PORT"
   },
   "dependencies": {

@@ -69,17 +69,35 @@ yarn
 ## Development
 
 ```bash
-yarn dev
+yarn start
 ```
+
+The app will be up at `localhost:9000`
 
 ## Testing
 
 ```bash
-yarn lint
+yarn test
 ```
 
 ## Production
 
 ```bash
-yarn start
+export PORT=80
+yarn serve
 ```
+
+The app will be up at `localhost`
+
+## Docker
+
+```bash
+docker pull gorillab/scraper
+docker run -d -p 9000:9000 gorillab/scraper
+```
+
+The app will be up at `localhost:9000`
+
+## Deploy to Heroku
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
