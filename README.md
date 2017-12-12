@@ -19,6 +19,7 @@ Send a GET request to `/scrape` endpoint with query string that contains
 
 - `s-url`: website url to be scraped
 - `s-scope`: css selector of scope
+- `s-limit`: number of data objects returned
 - `[key: string]`: css selector of data in scope
 
 ### Response
@@ -32,6 +33,7 @@ Scrape posts from [Hacker News](https://news.ycombinator.com)
 Request:
 - `s-url`: `https://news.ycombinator.com`
 - `s-scope`: `#hnmain table.itemlist tr.athing`
+- `s-limit`: `25`
 - `title`: `td.title a`
 - `description`: `td.title span a span`
 - `url`: `td.title a@href`
@@ -53,7 +55,8 @@ Response:
     "title": "Finding bugs in Haskell code by proving it",
     "description": "joachim-breitner.de",
     "url": "https://www.joachim-breitner.de/blog/734-Finding_bugs_in_Haskell_code_by_proving_it"
-  }
+  },
+  ...
 ]
 ```
 
