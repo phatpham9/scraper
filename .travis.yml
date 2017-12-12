@@ -23,7 +23,7 @@ jobs:
         - if [ ! -z "$TRAVIS_TAG" ]; then
             docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD";
             for TAG in {"$TRAVIS_TAG",latest}; do
-              docker tag "$DOCKER_REPO" "$DOCKER_REPO":"$TAG"
+              docker tag "$DOCKER_REPO" "$DOCKER_REPO":"$TAG";
               docker push "$DOCKER_REPO":"$TAG";
             done
           fi
