@@ -5,6 +5,9 @@ language: node_js
 node_js:
   - 9
 
+env:
+  - DOCKER_REPO=gorillab/scraper
+
 jobs:
   include:
     - stage: test
@@ -16,7 +19,14 @@ jobs:
       services:
         - docker
       script:
-        - docker build -t gorillab/scraper .
+        - docker build -t "$DOCKER_REPO" .
+        - if [ ! -z "$TRAVIS_TAG" ]; then
+            docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD";
+            for TAG in {"$TRAVIS_TAG",latest}; do
+              docker tag "$DOCKER_REPO" "$DOCKER_REPO":"$TAG"
+              docker push "$DOCKER_REPO":"$TAG";
+            done
+          fi
 
 cache:
   yarn: true
