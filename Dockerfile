@@ -9,6 +9,6 @@ WORKDIR /app
 
 RUN ["yarn", "--production"]
 
-ENV PORT 9000
+ENV PORT 80
 
 CMD ["yarn", "serve"]

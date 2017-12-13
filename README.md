@@ -93,10 +93,10 @@ The app will be up at `localhost`
 
 ```bash
 docker pull gorillab/scraper
-docker run -d -p 9000:9000 gorillab/scraper
+docker run -d -p 80:80 gorillab/scraper
 ```
 
-The app will be up at `localhost:9000`
+The app will be up at `localhost`
 
 ## Deploy to Heroku
 
