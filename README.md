@@ -3,7 +3,7 @@
 [![Build Status](https://img.shields.io/travis/gorillab/scraper.svg)](https://travis-ci.org/gorillab/scraper)
 [![Dependencies Status](https://img.shields.io/david/gorillab/scraper.svg)](https://github.com/gorillab/scraper)
 
-A scraper as a service based on micro
+A html scraper as a service based on micro
 
 ## Features
 
@@ -18,17 +18,36 @@ A scraper as a service based on micro
 Send a GET request to `/scrape` endpoint with query string that contains
 
 - `s-url`: website url to be scraped
-- `s-scope`: css selector of scope
-- `s-limit`: number of data objects returned
+- `s-selector`: css selector (for text in response)
+- `s-scope`: css selector of scope (for json array in response)
+- `s-limit` (optional): number of data objects returned
 - `[key: string]`: css selector of data in scope
 
 ### Response
 
-An array of json data whose keys are specified in request's query string.
+A text or an array of json data whose keys are specified in request's query string.
 
 ### Example
 
 Scrape posts from [Hacker News](https://news.ycombinator.com)
+
+#### Text
+
+Request:
+- `s-url`: `https://news.ycombinator.com`
+- `s-selector`: `td.title a`
+
+```bash
+curl http://localhost:9000/scrape?s-url=https://news.ycombinator.com&s-selector=td.title a
+```
+
+Response:
+
+```
+Show HN: Airmash – Multiplayer Missile Warfare (HTML5 Game)
+```
+
+#### Array
 
 Request:
 - `s-url`: `https://news.ycombinator.com`

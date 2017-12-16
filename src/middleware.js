@@ -18,18 +18,22 @@ const validate = Validation(Joi.object({
         ],
       })
       .required(),
+    sSelector: Joi
+      .string()
+      .trim(),
     sScope: Joi
       .string()
-      .trim()
-      .required(),
+      .trim(),
     sLimit: Joi
       .number()
       .min(MIN_LIMIT)
       .max(MAX_LIMIT)
       .default(DEFAULT_LIMIT),
   })
+  .xor('sSelector', 'sScope')
   .unknown(true)
   .rename('s-url', 'sUrl')
+  .rename('s-selector', 'sSelector')
   .rename('s-scope', 'sScope')
   .rename('s-limit', 'sLimit'),
 }));
