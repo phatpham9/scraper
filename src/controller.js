@@ -1,19 +1,12 @@
 const { INTERNAL_SERVER_ERROR, OK } = require('http-status-codes');
-const x = require('x-ray')();
+
+const x = require('./helpers/promise-x-ray');
 
 const scrape = async (req, res) => {
   const { sUrl, sScope, sLimit, ...selectors } = req.query;
 
   try {
-    const data = await new Promise((resolve, reject) => {
-      x(sUrl, sScope, [selectors])((error, result) => {
-        if (error) {
-          reject(error);
-        } else {
-          resolve(result);
-        }
-      });
-    });
+    const data = await x(sUrl, sScope, [selectors]);
 
     res.send(OK, data.slice(0, sLimit));
   } catch (error) {

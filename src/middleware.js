@@ -1,6 +1,6 @@
 const Validation = require('micro-joi');
 
-const { Joi } = require('./helpers/custom-joi');
+const Joi = require('./helpers/custom-joi');
 
 const DEFAULT_LIMIT = 25;
 const MIN_LIMIT = 1;

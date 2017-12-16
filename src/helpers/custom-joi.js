@@ -14,6 +14,4 @@ const Joi = OriginJoi.extend(joi => ({
   }],
 }));
 
-module.exports = {
-  Joi,
-};
+module.exports = Joi;
