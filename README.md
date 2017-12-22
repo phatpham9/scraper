@@ -17,15 +17,23 @@ An html scraper microservice based on x-ray & micro
 
 **Request**
 
-Send a `GET` request to `/scrape` endpoint with query string that contains:
+Send a `GET` request to `/scrape` endpoint with query string if:
 
-| Params     | Required       | Description                                                      |
-|------------|----------------|------------------------------------------------------------------|
-| s-url      | yes            | destination website url to be scraped                            |
-| s-selector | yes (if text)  | css selector of data to be extracted (text in result)            |
-| s-scope    | yes (if array) | css selector of data's scope (array of objects in result)        |
-| s-limit    | no (if array)  | limit number of objects are returned                             |
-| [selector] | yes (if array) | css selector of data to be extracted                             |
+1. Scraping a text
+
+| Params     | Required | Description                           |
+|------------|----------|---------------------------------------|
+| s-url      | yes      | destination website url to be scraped |
+| s-selector | yes      | css selector of data to be extracted  |
+
+2. Scraping multiple of data objects
+
+| Params     | Required | Description                               |
+|------------|----------|-------------------------------------------|
+| s-url      | yes      | destination website url to be scraped     |
+| s-scope    | yes      | css selector of data's scope              |
+| s-limit    | no       | limit number of objects returned          |
+| [selector] | yes      | css selector of each data to be extracted |
 
 **Response**
 
