@@ -1,6 +1,5 @@
+const Joi = require('joi');
 const Validation = require('micro-joi');
-
-const Joi = require('./helpers/custom-joi');
 
 const DEFAULT_LIMIT = 25;
 const MIN_LIMIT = 1;
@@ -8,8 +7,7 @@ const MAX_LIMIT = 100;
 
 const validate = Validation(Joi.object({
   query: Joi.object({
-    sUrl: Joi
-      .string()
+    sUrl: Joi.string()
       .trim()
       .uri({
         scheme: [
@@ -18,14 +16,11 @@ const validate = Validation(Joi.object({
         ],
       })
       .required(),
-    sSelector: Joi
-      .string()
+    sSelector: Joi.string()
       .trim(),
-    sScope: Joi
-      .string()
+    sScope: Joi.string()
       .trim(),
-    sLimit: Joi
-      .number()
+    sLimit: Joi.number()
       .min(MIN_LIMIT)
       .max(MAX_LIMIT)
       .default(DEFAULT_LIMIT),
