@@ -29,20 +29,20 @@ Send a `GET` request to `/scrape` endpoint with query string that contains:
 
 **Response**
 
-A text or an array of object in json whose keys are specified selectors in the request's query string.
+A text or an array of objects in json whose keys are specified selectors in the request's query string.
 
-### Examples
+## Examples
 
-#### Getting Bitcoin price in USD from [coinmarketcap.com](CoinMarketCap)
+### Scraping Bitcoin price in USD from [CoinMarketCap](coinmarketcap.com)
 
 - Request (uri encoded): `.../scrape?s-url=https://coinmarketcap.com&s-selector=%23id-bitcoin%20.price`
 - Response: as shown below
 
 <img style="text-align: center;" src="./example-images/btc-price.png" />
 
-#### Getting top 3 coins' price
+### Scraping top 3 coins' price
 
-- Request (uri encoded): `/scrape?s-url=https://coinmarketcap.com&s-scope=table%23currencies%20tbody%20tr&name=.currency-name%20.currency-name-container&price=.price&s-limit=3`
+- Request (uri encoded): `.../scrape?s-url=https://coinmarketcap.com&s-scope=table%23currencies%20tbody%20tr&name=.currency-name%20.currency-name-container&price=.price&s-limit=3`
 - Response: as shown below
 
 <img style="text-align: center;" src="./example-images/top-3-price.png" />
@@ -73,7 +73,7 @@ We use ESLint to lint source code. Simply run:
 yarn test
 ```
 
-### Run on production mode
+### Running in production mode
 
 By the command:
 
@@ -103,7 +103,7 @@ Click the below button to deploy to Heroku dyno
 ## Contributing
 
 1. Fork this repository to your own GitHub account and then clone it to your local device
-2. Follow the Development guide or just simply run: yarn start
+2. Follow the Development guide or just simply run: `yarn start`
 3. Lint code by running: yarn test
 4. Create a pull request for us
 
