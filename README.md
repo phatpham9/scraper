@@ -91,7 +91,7 @@ PORT=80 yarn serve
 
 The app will be up at `127.0.0.1`
 
-### Using Docker image
+### Deploy using Docker
 
 You can use the existing docker image from https://hub.docker.com/r/gorillab/scraper by running:
 
@@ -101,6 +101,16 @@ docker run -d -p 80:80 gorillab/scraper
 ```
 
 The app will be up at `127.0.0.1`
+
+### Deploy to CaptainDuckDuck
+
+[CaptainDuckDuck](https://github.com/githubsaturn/captainduckduck) is a nice heroku-liked tool to deploy your apps easily. You need to install CaptainDuckDuck client on your local, follow [the instruction here](https://github.com/githubsaturn/captainduckduck/wiki/Getting-Started) to do it then run on your local:
+
+```bash
+captainduckduck deploy
+```
+
+That's it!
 
 ### Deploy to Heroku
 
