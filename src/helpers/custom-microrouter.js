@@ -1,5 +1,6 @@
 const { send } = require('micro');
 const { router, get, post, put, del } = require('microrouter');
+const cors = require('micro-cors')();
 
 const wrap = cb => (path, fn) => {
   const newFn = (req, res) => {
@@ -8,7 +9,7 @@ const wrap = cb => (path, fn) => {
     return fn(req, res);
   };
 
-  return cb(path, newFn);
+  return cb(path, cors(newFn));
 };
 
 module.exports = {

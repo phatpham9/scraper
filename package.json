@@ -25,6 +25,7 @@
     "http-status-codes": "^1.3.0",
     "joi": "^13.0.2",
     "micro": "latest",
+    "micro-cors": "^0.0.4",
     "micro-joi": "^3.1.0",
     "micro-ratelimit": "^0.3.0",
     "microrouter": "^3.0.0",
