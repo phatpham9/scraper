@@ -2,10 +2,10 @@
 
 An html scraper microservice based on x-ray & micro
 
-[![Package Version](https://img.shields.io/github/package-json/v/gorillab/scraper.svg)]()
-[![Travis](https://img.shields.io/travis/gorillab/scraper.svg)](https://travis-ci.org/gorillab/scraper)
-[![David](https://img.shields.io/david/gorillab/scraper.svg)](https://github.com/gorillab/scraper)
-[![David Dev](https://img.shields.io/david/dev/gorillab/scraper.svg)](https://github.com/gorillab/scraper)
+[![Package Version](https://img.shields.io/github/package-json/v/phatpham9/scraper.svg)]()
+[![Travis](https://img.shields.io/travis/phatpham9/scraper.svg)](https://travis-ci.org/phatpham9/scraper)
+[![David](https://img.shields.io/david/phatpham9/scraper.svg)](https://github.com/phatpham9/scraper)
+[![David Dev](https://img.shields.io/david/dev/phatpham9/scraper.svg)](https://github.com/phatpham9/scraper)
 
 ## Features
 
@@ -43,14 +43,14 @@ A text or an array of objects in json whose keys are specified selectors in the 
 
 ### Scraping Bitcoin price in USD from [CoinMarketCap](coinmarketcap.com)
 
-- Request (uri encoded): `.../scrape?s-url=https://coinmarketcap.com&s-selector=%23id-bitcoin%20.price`
+- Request (uri encoded): `https://scraper.fun/scrape?s-url=https://coinmarketcap.com&s-selector=%23id-bitcoin%20.price`
 - Response: as shown below
 
 <img style="text-align: center;" src="./example-images/btc-price.png" />
 
 ### Scraping top 3 coins' price
 
-- Request (uri encoded): `.../scrape?s-url=https://coinmarketcap.com&s-scope=table%23currencies%20tbody%20tr&name=.currency-name%20.currency-name-container&price=.price&s-limit=3`
+- Request (uri encoded): `https://scraper.fun/scrape?s-url=https://coinmarketcap.com&s-scope=table%23currencies%20tbody%20tr&name=.currency-name%20.currency-name-container&price=.price&s-limit=3`
 - Response: as shown below
 
 <img style="text-align: center;" src="./example-images/top-3-price.png" />
@@ -93,11 +93,11 @@ The app will be up at `127.0.0.1`
 
 ### Deploy using Docker
 
-You can use the existing docker image from https://hub.docker.com/r/gorillab/scraper by running:
+You can use the existing docker image from https://hub.docker.com/r/phatpham9/scraper by running:
 
 ```bash
-docker pull gorillab/scraper
-docker run -d -p 80:80 gorillab/scraper
+docker pull phatpham9/scraper
+docker run -d -p 80:80 phatpham9/scraper
 ```
 
 The app will be up at `127.0.0.1`
@@ -127,4 +127,4 @@ Click the below button to deploy to Heroku dyno
 
 ## Contributing
 
-* Phat Pham ([@phatpham9](https://github.com/phatpham9)) - [Gorillab](https://github.com/gorillab)
+* Phat Pham ([@phatpham9](https://github.com/phatpham9))
