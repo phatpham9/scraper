@@ -3,30 +3,26 @@ sudo: required
 language: node_js
 
 node_js:
-  - 9
+- 9
 
 env:
-  - DOCKER_REPO=phatpham9/scraper
+- DOCKER_REPO=phatpham9/scraper
 
 jobs:
   include:
-    - stage: test
-      install:
-        - yarn
-      script:
-        - yarn test
-    - stage: build
-      services:
-        - docker
-      script:
-        - docker build -t "$DOCKER_REPO" .
-        - if [ ! -z "$TRAVIS_TAG" ]; then
-            docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD";
-            for TAG in {"$TRAVIS_TAG",latest}; do
-              docker tag "$DOCKER_REPO" "$DOCKER_REPO":"$TAG";
-              docker push "$DOCKER_REPO":"$TAG";
-            done
-          fi
+  - stage: test
+    install:
+    - yarn
+    script:
+    - yarn test
+  - stage: build
+    services:
+    - docker
+    script:
+    - docker build -t "$DOCKER_REPO" .
+    - if [ ! -z "$TRAVIS_TAG" ]; then docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD";
+      for TAG in {"$TRAVIS_TAG",latest}; do docker tag "$DOCKER_REPO" "$DOCKER_REPO":"$TAG";
+      docker push "$DOCKER_REPO":"$TAG"; done fi
 
 cache:
   yarn: true
@@ -36,4 +32,4 @@ cache:
 notifications:
   email: false
   slack:
-    secure: cEBdbS8nVFdSvZssNEy0LTtyKs3E2aRM7lC9JjtEu029AM7WV+FVMMOGDz1fXuQIy3/X35rd0U8K2KHbDXxVOoT4TcMgDTDwRhc/kHsRFAHEG1MK6l+XvBYX/ta3bCg+w6q9a5z/eppLxWJH1D9vIn0eSGO+9rlTh+X3FeANjOCI/5huS6Ssf31GeVaHi6ZrUT0ZtIaP7DV21YPDb5r9hkyEpJpIucPPU3GToqc/MzEWryrWQtWmsqxvFa6L1/2n9Yv4ZsUI0G8v9icqvHFP4D76GqzyO3tGP1fJKGdv29mrAoI52A2pl2KkgURO/3PxktvOaeQ8Ir3YFEsJfg/MtaSyEU1UtKYKTKR1g0b4FfE5CvQ13RMRQ5Owg5S92nVN7jdVsIKNTlQMOAoz4LP1qLkqbXj0TSlOVcL5vXFQydmxhr0C4PPHVe4u9m8qRNKLtmjD1O3YN5WDaWxTFkTnXgdXld0Xtp9RZR3keaKyBPGtRuQTg3Bwn9Vfhwst+35XXeUfGcLrEiRuiFsU27ItNDy/NbyYvYSHieLwXSYGV2YBSe8xpYZ85RGsC+dTrS0lxz27MqJEVy7l2WgOGb3Aa86eALuEWPzcC3i5g0rIBNIG4pL1A7AI3BeFPxVBeHlE7VtI+JJb3ahQ/VvTF/XC0O1kuvItxiLv3MIcpI924m4=
+    secure: thq7zoMwgP1XIX/LsNw+ncvZ52MeGGIz6CasD2/mQDi3NCZMMi0FL/Qogq4MFRK84qqjCbdzB2AVDeswNFsp+Xr2Znnh7DhYDjAc+2DoN46RcJJaCoWBqj4RXjymKgWfLJKYerQ7DNBfG50JTfgZ6jv4amU1228OKndczHcCV4A1I4PNCqxHsneKaaU7gh6om3Jr5xnycdstRhl/ati/ESwT9z24Sls4oYW0Ya7H+SQDyIFIk6tKFqkEhMzGG8kzUwG6wVbb69ac7YpTFO4TwoM9HSXBmjxKXwxJClwTN95NS/QMZYDDPH4DeArX9IXM7gbta4ECZc3gy+nVDODitj60y7kd6+uFWNG41mIwST3CcHYhyWOpN9veUfsIHoWio+I2i9I/EJ374tmLtFBOg6sIQrZO5qB1eiyMgB69X9sSBZn/MGeQnzZutfehLGqCQ7A5Hfued/MQr1FIS42AkLuUDpElMh/Hz+Pzp5/YQoLfQZJl5vDJXZjU29wnBZUafcEYPJ2Bj0+tmsgd6led2uCrmqXHhadW6/0EOs/qFy03PXX7d/4Lr7jGeIC3I1gnh8Rxt0MYLLEOaSSFNs5mXDxo8FRZ1cKyfwO3bmTZiQqzzc7/pWLAY0ozW1igep7cR5cwJ6IzQRj6A8JInXBrWafaOEV0HtfgdzWhUJWJGag=
