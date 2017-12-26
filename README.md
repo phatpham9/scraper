@@ -43,14 +43,14 @@ A text or an array of objects in json whose keys are specified selectors in the 
 
 ### Scraping Bitcoin price in USD from [CoinMarketCap](coinmarketcap.com)
 
-- Request (uri encoded): `https://scraper.fun/scrape?s-url=https://coinmarketcap.com&s-selector=%23id-bitcoin%20.price`
+- Request (uri encoded): `https://scraper.onroads.xyz/scrape?s-url=https://coinmarketcap.com&s-selector=%23id-bitcoin%20.price`
 - Response: as shown below
 
 <img style="text-align: center;" src="./example-images/btc-price.png" />
 
 ### Scraping top 3 coins' price
 
-- Request (uri encoded): `https://scraper.fun/scrape?s-url=https://coinmarketcap.com&s-scope=table%23currencies%20tbody%20tr&name=.currency-name%20.currency-name-container&price=.price&s-limit=3`
+- Request (uri encoded): `https://scraper.onroads.xyz/scrape?s-url=https://coinmarketcap.com&s-scope=table%23currencies%20tbody%20tr&name=.currency-name%20.currency-name-container&price=.price&s-limit=3`
 - Response: as shown below
 
 <img style="text-align: center;" src="./example-images/top-3-price.png" />
