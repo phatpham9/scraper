@@ -1,0 +1,6 @@
+{
+  "name": "scraper",
+  "description": "An html scraper microservice based on x-ray & micro.",
+  "repository": "https://github.com/phatpham9/scraper",
+  "keywords": ["node", "scraper"]
+}
